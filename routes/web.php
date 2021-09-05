@@ -66,9 +66,13 @@ Route::get('/admin/list-gifts',[PostGiftsController::class, 'index']);
 Route::get('/post',[PostGiftsController::class, 'create']);
 Route::post('/post',[PostGiftsController::class, 'store']);
 
-Route::get('/send-mail', [SendEmailController::class, 'send']);
-
+//Import location
 Route::get('/location/form', [\App\Http\Controllers\LocationController::class, 'getForm']);
 Route::get('/location/city', [\App\Http\Controllers\LocationController::class, 'getCity']);
 Route::get('/location/district', [\App\Http\Controllers\LocationController::class, 'getDistrict']);
 Route::get('/location/ward', [\App\Http\Controllers\LocationController::class, 'getWard']);
+
+//Mail
+Route::get('/send-confirm', [SendEmailController::class, 'confirm']);
+Route::get('/send-progress', [SendEmailController::class, 'progress']);
+Route::get('/send-refuse', [SendEmailController::class, 'refuse']);
