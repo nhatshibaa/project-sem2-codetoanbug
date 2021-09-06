@@ -196,9 +196,7 @@
                             <table style="margin:0 auto;" cellspacing="0" cellpadding="0" width="100%">
                                 <tr>
                                     <td style="text-align: center;">
-                                        <a href="#"><img class="w320" width="311" height="83"
-                                                         src="https://www.filepicker.io/api/file/HotdLrI8SCq4ZW3NRAUh"
-                                                         alt="company logo"/></a>
+                                        <img src="/email/Jamison.png" alt="" width="350" height="70">
                                     </td>
                                 </tr>
                             </table>
@@ -211,18 +209,11 @@
 
                                         <table cellspacing="0" cellpadding="0" class="force-full-width">
                                             <tr>
-                                                <td style="font-size:40px; font-weight: 600; color: #ffffff; text-align:center;"
+                                                <td style="font-size:30px; font-weight: 600; color: #ffffff; text-align:center;"
                                                     class="mobile-spacing">
                                                     <div class="mobile-br">&nbsp;</div>
-                                                    Your order shipped!
+                                                    Tài khoản của bạn đã được phê duyệt!
                                                     <br/>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="font-size:24px; text-align:center; padding: 0 75px; color: #6f6f6f;"
-                                                    class="w320 mobile-spacing">
-                                                    We would like you to know that your order has shipped! Details
-                                                    below.
                                                 </td>
                                             </tr>
                                         </table>
@@ -243,42 +234,26 @@
                             <table cellspacing="0" cellpadding="0" class="force-full-width" bgcolor="#ffffff">
                                 <tr>
                                     <td style="background-color:#ffffff; padding-top: 15px;">
-
                                         <center>
-                                            <table style="margin:0 auto;" cellspacing="0" cellpadding="0"
-                                                   class="force-width-80">
-                                                <tr>
-                                                    <td style="text-align:left;">
-                                                        <br>
-                                                        <strong>Shipping Address:</strong><br>
-                                                        Bob Erlicious<br>
-                                                        1234 Bobbz Way <br>
-                                                        Victoria, BC <br>
-                                                        V2A 7D8
-                                                    </td>
-                                                    <td style="text-align:right; vertical-align:top;">
-                                                        <br>
-                                                        <b>Order: 23130</b> <br>
-                                                        2014-04-23
-                                                    </td>
-                                                </tr>
-                                            </table>
-
                                             <table style="margin:0 auto;" cellspacing="0" cellpadding="0"
                                                    class="force-width-80">
                                                 <tr>
                                                     <td class="mobile-block">
                                                         <br>
-
                                                         <table cellspacing="0" cellpadding="0" class="force-full-width">
                                                             <tr>
-                                                                <td style="border-bottom:1px solid #e3e3e3; font-weight: bold; text-align:left">
-                                                                    Delivery Date
+                                                                <td style="border-bottom:1px solid #e3e3e3; font-weight: bold; text-align:left; padding-bottom: 15px">
+                                                                    Thông tin tài khoản
                                                                 </td>
                                                             </tr>
                                                             <tr>
                                                                 <td style="text-align:left;">
-                                                                    Monday, 20th May 2014
+                                                                    <h4>Username:</h4>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="text-align:left;">
+                                                                    <h4>Password:</h4>
                                                                 </td>
                                                             </tr>
                                                         </table>
@@ -288,36 +263,34 @@
                                             <table style="margin: 0 auto;" cellspacing="0" cellpadding="0"
                                                    class="force-width-80">
                                                 <tr>
-                                                    <td style="text-align: left;">
-                                                        <br>
-                                                        To track or view your order please click the button below. Thank
-                                                        you for your business.<br><br>
-                                                        Awesome Inc
+                                                    <td style="text-align: left">
+                                                        <p>Để xem thông tin tài khoản chi tiết hoặc đăng nhập vào website, xin vui lòng nhấn vào
+                                                            nút bên dưới.</p>
+                                                        <p style="font-size: 15px; color: black">Cảm ơn vì đã trở thành
+                                                            khách hàng của chúng tôi.
+                                                            <br>Đội ngũ Admin KidsClothesFree</p>
                                                     </td>
                                                 </tr>
                                             </table>
                                         </center>
-
                                         <table style="margin:0 auto;" cellspacing="0" cellpadding="10" width="100%">
                                             <tr>
                                                 <td style="text-align:center; margin:0 auto;">
                                                     <br>
-                                                    <div><!--[if mso]>
-                                                        <v:rect xmlns:v="urn:schemas-microsoft-com:vml"
-                                                                xmlns:w="urn:schemas-microsoft-com:office:word"
-                                                                href="http://"
-                                                                style="height:45px;v-text-anchor:middle;width:180px;"
-                                                                stroke="f" fillcolor="#f5774e">
-                                                            <w:anchorlock/>
-                                                            <center>
-                                                        <![endif]-->
-                                                        <a href="http://"
-                                                           style="background-color:#f5774e;color:#ffffff;display:inline-block;font-family:'Source Sans Pro', Helvetica, Arial, sans-serif;font-size:18px;font-weight:400;line-height:45px;text-align:center;text-decoration:none;width:180px;-webkit-text-size-adjust:none;">My
-                                                            Order</a>
-                                                        <!--[if mso]>
-                                                        </center>
-                                                        </v:rect>
-                                                        <![endif]--></div>
+                                                    <div>
+                                                        <a href="#"
+                                                           style="background-color:#f5774e;color:#ffffff;display:inline-block;font-family:'Source Sans Pro', Helvetica, Arial, sans-serif;font-size:18px;font-weight:400;line-height:45px;text-align:center;text-decoration:none;width:180px;-webkit-text-size-adjust:none;">
+                                                            View Profile</a>
+                                                    </div>
+                                                    <br>
+                                                </td>
+                                                <td style="text-align:center; margin:0 auto;">
+                                                    <br>
+                                                    <div>
+                                                        <a href="#"
+                                                           style="background-color:#f5774e;color:#ffffff;display:inline-block;font-family:'Source Sans Pro', Helvetica, Arial, sans-serif;font-size:18px;font-weight:400;line-height:45px;text-align:center;text-decoration:none;width:180px;-webkit-text-size-adjust:none;">
+                                                            Visit Website</a>
+                                                    </div>
                                                     <br>
                                                 </td>
                                             </tr>
@@ -325,28 +298,14 @@
                                         <table cellspacing="0" cellpadding="0" bgcolor="#363636"
                                                class="force-full-width">
                                             <tr>
-                                                <td style="background-color:#363636; text-align:center;">
-                                                    <br>
-                                                    <br>
-                                                    <img width="62" height="56" img
-                                                         src="https://www.filepicker.io/api/file/FjkhDKXsTFyaHnXhhBCw">
-                                                    <img width="68" height="56"
-                                                         src="https://www.filepicker.io/api/file/W6gXqm5BRL6qSvQRcI7u">
-                                                    <img width="61" height="56"
-                                                         src="https://www.filepicker.io/api/file/eV9YfQkBTiaOu9PA9gxv">
-                                                    <br>
-                                                    <br>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="color:#f0f0f0; font-size: 14px; text-align:center; padding-bottom:4px;">
-                                                    © 2014 All Rights Reserved
+                                                <td style="color:#f0f0f0; font-size: 14px; text-align:center; padding-bottom:4px;background-color:#363636;">
+                                                    <br><br>
+                                                    <p>© 2021 All Rights Reserved</p>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td style="color:#27aa90; font-size: 14px; text-align:center;">
-                                                    <a href="#">View in browser</a> | <a href="#">Contact</a> | <a
-                                                        href="#">Unsubscribe</a>
+                                                    <a href="#">Liên hệ với chúng tôi</a>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -355,7 +314,6 @@
                                                 </td>
                                             </tr>
                                         </table>
-
                                     </td>
                                 </tr>
                             </table>
