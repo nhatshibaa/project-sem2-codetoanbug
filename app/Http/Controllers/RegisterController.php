@@ -6,6 +6,11 @@ use App\Http\Requests\RequestRegister;
 use App\Models\Admin;
 use App\Models\Users;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
+use Keygen\Keygen;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class RegisterController extends Controller
 {
@@ -53,6 +58,7 @@ class RegisterController extends Controller
      */
     public function store(RequestRegister $request)
     {
+        $password = $request->get('password');
         $request->validated();
         $obj = new Users();
         $obj->fullName = $request->get('fullName');
@@ -62,12 +68,23 @@ class RegisterController extends Controller
         $obj->gender = $request->get('gender');
         $obj->phone = $request->get('phone');
         $obj->username = $request->get('username');
-        $obj->password = $request->get('password');
-        $obj->imgIdCardFront = $request->get('img_cardID_front');
-        $obj->imgIdCardBack = $request->get('img_cardID_back');
-        $obj->status= 0;
+        $obj->password_hash = Hash::make($password);
+        $obj->email = $request->get('email');
+        $obj->imgIdCardFront = $request->get('imgCardIDf');
+        $obj->imgIdCardBack = $request->get('imgCardIDb');
+        $obj->city = $request->get('city');
+        $obj->district = $request->get('district');
+        $obj->ward = $request->get('ward');
+        $obj->status = 0;
         $obj->save();
-        return redirect('/register');
+        $data = array('title' => 'Xin chao vietnam', 'content' => 'Day la noi dung');
+        Mail::send('email.progress', $data, function ($message) use ($obj) {
+            $message->to($obj->email, 'Tutorials Point')->subject
+            ('Thông báo chờ admin phê duyệt tài khoản!');
+            $message->from('kidsclothesfree@gmail.com', 'Đội ngũ KidsClothesFree');
+        });
+        alert('Đăng ký thành công', 'Vui lòng chờ admin duyệt tài khoản và gửi email thông báo!', 'success');
+        return redirect('/');
     }
 
     /**
@@ -106,6 +123,7 @@ class RegisterController extends Controller
         $obj->status = 1;
         $obj->updated_at = \Carbon\Carbon::now();
         $obj->save();
+//        alert('Phê duyệt tài khoản thành công', 'Đã gửi email thông báo!', 'success');
         return redirect('admin/list-user');
     }
 
@@ -121,6 +139,7 @@ class RegisterController extends Controller
         $obj->status = -1;
         $obj->updated_at = \Carbon\Carbon::now();
         $obj->save();
+//        alert('Từ chối tài khoản thành công', 'Đã gửi email thông báo!', 'success');
         return redirect('admin/list-user');
 
     }

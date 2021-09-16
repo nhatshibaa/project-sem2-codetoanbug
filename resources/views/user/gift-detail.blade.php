@@ -6,10 +6,10 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="breadcrumb-wrapper">
-                        <h2 class="product-title">Details</h2>
+                        <h2 class="product-title">Thông tin chi tiết</h2>
                         <ol class="breadcrumb">
-                            <li><a href="#">Home /</a></li>
-                            <li class="current">Details</li>
+                            <li><a href="#">Trang chủ /</a></li>
+                            <li class="current">Thông tin chi tiết</li>
                         </ol>
                     </div>
                 </div>
@@ -25,67 +25,36 @@
                 <div class="col-lg-8 col-md-12 col-xs-12">
                     <div class="ads-details-wrapper">
                         <div id="owl-demo" class="owl-carousel owl-theme">
-                            <div class="item">
-                                <div class="product-img">
-                                    <img class="img-fluid" src="user/img/productinfo/img1.jpg" alt="">
+                            @foreach($item->listPhoto as $url)
+                                <div class="item">
+                                    <div class="product-img">
+                                        <img class="img-fluid" src="{{$url}}" alt="">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="item">
-                                <div class="product-img">
-                                    <img class="img-fluid" src="user/img/productinfo/img3.jpg" alt="">
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="product-img">
-                                    <img class="img-fluid" src="user/img/productinfo/img2.jpg" alt="">
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                     <div class="details-box">
                         <div class="ads-details-info">
-                            <h2>Apple MF839LL/A MacBook Pro 13.3-Inch Laptop</h2>
+                            <h2>{{$item->title}}</h2>
                             <div class="details-meta">
-                                <span><a href="#"><i class="lni-alarm-clock"></i> 7 Jan, 10:10 pm</a></span>
-                                <span><a href="#"><i class="lni-map-marker"></i> New York</a></span>
+                                <span><a href="#"><i class="lni-alarm-clock"></i>{{$item->created_at}}</a></span>
+                                <span><a href="#"><i class="lni-map-marker"></i>{{$account->address}}</a></span>
+                                {{--                                {{ $account->wardName->name}}, {{ $account->districtName->name}},--}}
+                                {{--                                {{ $account->cityName->name}}--}}
                             </div>
-                            <p class="mb-4">Up for sale we have a vintage Raleigh Sport Men’s Bicycle. This bike does
-                                have some general wear and surface corrosion on some of the parts but is overall in good
-                                shape. It has been checked out and does work. Brakes and gears work. Seat is fully
-                                intact. Frame and fenders are in nice shape with minimal wear. A few minor dents in the
-                                fenders but most of the paint is intact. This vintage bicycle is very well preserved and
-                                can be used the way it is or fully restored if you would like it to look newer.</p>
-                            <h4 class="title-small mb-3">Specification:</h4>
-                            <ul class="list-specification">
-                                <li><i class="lni-check-mark-circle"></i> 256GB PCIe flash storage</li>
-                                <li><i class="lni-check-mark-circle"></i> 2.7 GHz dual-core Intel Core i5</li>
-                                <li><i class="lni-check-mark-circle"></i> Turbo Boost up to 3.1GHz</li>
-                                <li><i class="lni-check-mark-circle"></i> Intel Iris Graphics 6100</li>
-                                <li><i class="lni-check-mark-circle"></i> 8GB memory</li>
-                                <li><i class="lni-check-mark-circle"></i> 10 hour battery life</li>
-                                <li><i class="lni-check-mark-circle"></i> 13.3" Retina Display</li>
-                                <li><i class="lni-check-mark-circle"></i> 1 Year international warranty</li>
-                            </ul>
-                            <p class="mb-4">
-                                Up for sale we have a vintage Raleigh Sport Men’s Bicycle. This bike does have some
-                                general wear and surface corrosion on some of the parts but is overall in good shape. It
-                                has been checked out and does work. Brakes and gears work. Seat is fully intact. Frame
-                                and fenders are in nice shape with minimal wear. A few minor dents in the fenders but
-                                most of the paint is intact.
-                            </p>
+                            <p class="mb-4">{!! $item->content !!}</p>
                         </div>
                         <div class="tag-bottom">
                             <div class="float-left">
                                 <ul class="advertisement">
                                     <li>
-                                        <p><strong><i class="lni-folder"></i> Categories:</strong> <a href="#">Electronics</a>
+                                        <p><strong><i class="lni-folder"></i> Danh mục:</strong> <a
+                                                href="#">{{$item->category->name}}</a>
                                         </p>
                                     </li>
                                     <li>
-                                        <p><strong><i class="lni-archive"></i> Condition:</strong> New</p>
-                                    </li>
-                                    <li>
-                                        <p><strong><i class="lni-package"></i> Brand:</strong> <a href="#">Apple</a></p>
+                                        <p><strong><i class="lni-archive"></i> Trạng thái:</strong> New</p>
                                     </li>
                                 </ul>
                             </div>
@@ -109,127 +78,60 @@
                 <div class="col-lg-4 col-md-6 col-xs-12">
                     <aside class="details-sidebar">
                         <div class="widget">
-                            <h4 class="widget-title">Gift Posted By</h4>
+                            <h4 class="widget-title">Đăng bởi</h4>
                             <div class="agent-inner">
                                 <div class="agent-title">
                                     <div class="agent-photo">
-                                        <a href="#"><img src="user/img/author/img.png" alt=""></a>
+                                        <a href="#"><img src="/user/img/author/img.png" alt=""></a>
                                     </div>
                                     <div class="agent-details">
-                                        <h3><a href="#">Tahmina Anny</a></h3>
-                                        <span><i class="lni-phone-handset"></i>(123) 123-456</span>
+                                        <h3><a href="#">{{$account->fullName}}</a></h3>
+                                        <span><i class="lni-phone-handset"></i>{{$account->phone}}</span>
                                     </div>
                                 </div>
-                                <input type="text" class="form-control" placeholder="Your Name">
-                                <input type="text" class="form-control" placeholder="Your Phone">
-                                <textarea name="" id="" cols="37" rows="4" placeholder="Content"></textarea>
-                                <button class="btn btn-common fullwidth mt-4">Send Message</button>
+                                <form action="/gift-detail/{{$item->id}}" method="post">
+                                    @csrf
+                                    @if(\Illuminate\Support\Facades\Session::has('idUser'))
+                                        <textarea name="content" id="" cols="37" rows="4"
+                                                  placeholder="Nội dung"></textarea>
+                                        <input type="hidden" value="{{$item->id}}" name="giftId">
+                                        <a><input class="btn btn-common fullwidth mt-4" value="Xin" type="submit"></a>
+                                    @else
+                                        <textarea name="content" id="" cols="37" rows="4"
+                                                  placeholder="Content"></textarea>
+                                        <a href="/login">
+                                            <input class="btn btn-common fullwidth mt-4" value="Xin" type="submit">
+                                        </a>
+                                    @endif
+                                </form>
                             </div>
                         </div>
 
                         <div class="widget">
-                            <h4 class="widget-title">More Gifts From Seller</h4>
+                            <h4 class="widget-title">Thêm nhiều quà tặng hơn</h4>
                             <ul class="posts-list">
-                                <li>
-                                    <div class="widget-thumb">
-                                        <a href="#"><img src="user/img/details/img1.jpg" alt=""/></a>
-                                    </div>
-                                    <div class="widget-content">
-                                        <h4><a href="#">Little Harbor Yacht 38</a></h4>
-                                        <div class="meta-tag">
-                                            <span>
-                                            <a href="#"><i class="lni-user"></i> Smith</a>
-                                            </span>
-                                            <span>
-                                            <a href="#"><i class="lni-map-marker"></i> New Your</a>
-                                            </span>
-                                            <span>
-                                            <a href="#"><i class="lni-tag"></i> Radio</a>
-                                            </span>
+                                @foreach($list as $item)
+                                    <li>
+                                        <div class="widget-thumb">
+                                            <a href="#"><img src="{{$item->firstImg}}" alt=""/></a>
                                         </div>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </li>
-                                <li>
-                                    <div class="widget-thumb">
-                                        <a href="#"><img src="user/img/details/img2.jpg" alt=""/></a>
-                                    </div>
-                                    <div class="widget-content">
-                                        <h4><a href="#">Little Harbor Yacht 38</a></h4>
-                                        <div class="meta-tag">
+                                        <div class="widget-content" style="margin-left: 115px">
+                                            <h4><a href="#">{{$item->title}}</a></h4>
+                                            <div class="meta-tag">
                                             <span>
-                                            <a href="#"><i class="lni-user"></i> Smith</a>
+                                            <a href="#"><i class="lni-user"></i> {{$account->fullName}}</a>
                                             </span>
-                                            <span>
-                                            <a href="#"><i class="lni-map-marker"></i> New Your</a>
+                                                <span>
+                                            <a href="#"><i class="lni-map-marker"></i> {{$account->address}}</a>
                                             </span>
-                                            <span>
-                                            <a href="#"><i class="lni-tag"></i> Radio</a>
+                                                <span>
+                                            <a href="#"><i class="lni-tag"></i> {{$item->category->name}}</a>
                                             </span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </li>
-                                <li>
-                                    <div class="widget-thumb">
-                                        <a href="#"><img src="user/img/details/img3.jpg" alt=""/></a>
-                                    </div>
-                                    <div class="widget-content">
-                                        <h4><a href="#">Little Harbor Yacht 38</a></h4>
-                                        <div class="meta-tag">
-                                            <span>
-                                            <a href="#"><i class="lni-user"></i> Smith</a>
-                                            </span>
-                                            <span>
-                                            <a href="#"><i class="lni-map-marker"></i> New Your</a>
-                                            </span>
-                                            <span>
-                                            <a href="#"><i class="lni-tag"></i> Radio</a>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </li>
-                                <li>
-                                    <div class="widget-thumb">
-                                        <a href="#"><img src="user/img/details/img4.jpg" alt=""/></a>
-                                    </div>
-                                    <div class="widget-content">
-                                        <h4><a href="#">Little Harbor Yacht 38</a></h4>
-                                        <div class="meta-tag">
-                                            <span>
-                                            <a href="#"><i class="lni-user"></i> Smith</a>
-                                            </span>
-                                            <span>
-                                            <a href="#"><i class="lni-map-marker"></i> New Your</a>
-                                            </span>
-                                            <span>
-                                            <a href="#"><i class="lni-tag"></i> Radio</a>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </li>
-                                <li>
-                                    <div class="widget-thumb">
-                                        <a href="#"><img src="user/img/details/img5.jpg" alt=""/></a>
-                                    </div>
-                                    <div class="widget-content">
-                                        <h4><a href="#">Little Harbor Yacht 38</a></h4>
-                                        <div class="meta-tag">
-                                            <span>
-                                            <a href="#"><i class="lni-user"></i> Smith</a>
-                                            </span>
-                                            <span>
-                                            <a href="#"><i class="lni-map-marker"></i> New Your</a>
-                                            </span>
-                                            <span>
-                                            <a href="#"><i class="lni-tag"></i> Radio</a>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </li>
+                                        <div class="clearfix"></div>
+                                    </li>
+                                @endforeach
                             </ul>
                         </div>
                     </aside>

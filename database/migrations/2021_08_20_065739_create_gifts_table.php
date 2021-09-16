@@ -17,7 +17,7 @@ class CreateGiftsTable extends Migration
             $table->increments('id');
             $table->integer('idUser')->unsigned();
             $table->foreign('idUser')->references('id')->on('users');
-            $table->integer('categoryId')->unsigned();
+            $table->bigInteger('categoryId')->unsigned();
             $table->foreign('categoryId')->references('id')->on('categories');
             $table->string('title');
             $table->text('images');
@@ -27,7 +27,7 @@ class CreateGiftsTable extends Migration
             $table->integer('size');
             $table->string('age');
             $table->timestamps();
-            $table->integer('status')->default(0);
+            $table->integer('status')->default(0); //1,đã duyệt | 0,đang chờ duyệt | -1,từ chối
         });
     }
 

@@ -30,7 +30,7 @@
                                         <th>ID</th>
                                         <th>Fullname</th>
                                         <th>ID number</th>
-                                        <th>Age</th>
+                                        <th>Email</th>
                                         <th>Phone</th>
                                         <th>Address</th>
                                         <th>Gender</th>
@@ -46,7 +46,7 @@
                                         <td>{{$item->id}}</td>
                                         <td>{{$item->fullName}}</td>
                                         <td>{{$item->idNumber}}</td>
-                                        <td>{{$item->age}}</td>
+                                        <td>{{$item->email}}</td>
                                         <td>{{$item->phone}}</td>
                                         <td>{{$item->address}}</td>
                                         <td>{{$item->gender}}</td>

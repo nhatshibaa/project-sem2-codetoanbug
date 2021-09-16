@@ -71,7 +71,7 @@
                     <li class="icons dropdown">
                         <div class="user-img c-pointer position-relative" data-toggle="dropdown">
                             <span class="activity active"></span>
-                            <img src="/assets/images/user/1.png" alt="admin">
+                            <img src="/assets/images/avatar/1.jpg" alt="admin">
                         </div>
                         <div class="drop-down dropdown-profile animated fadeIn dropdown-menu">
                             <div class="dropdown-content-body">
@@ -144,8 +144,8 @@
                         </li>
                         <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="fas fa-th-list"></i>Categories</a>
                             <ul aria-expanded="false">
-                                <li><a href="#">Edit </a></li>
-                                <li><a href="/admin/list-category">List </a></li>
+                                <li><a href="/admin/create-category">Create Category </a></li>
+                                <li><a href="/admin/list-category">List Category </a></li>
                             </ul>
                         </li>
                         <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="far fa-newspaper"></i>Articles</a>

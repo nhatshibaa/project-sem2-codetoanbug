@@ -22,135 +22,49 @@
     <div class="main-container section-padding">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-12 col-xs-12 page-sidebar">
-                    <aside>
-
-                        <div class="widget_search">
-                            <form role="search" id="search-form">
-                                <input type="search" class="form-control" autocomplete="off" name="s" placeholder="Search..." id="search-input" value="">
-                                <button type="submit" id="search-submit" class="search-btn"><i class="lni-search"></i></button>
-                            </form>
-                        </div>
-
-                        <div class="widget categories">
-                            <h4 class="widget-title">All Categories</h4>
-                            <ul class="categories-list">
-                                <li>
-                                    <a href="#">
-                                        <i class="lni-dinner"></i>
-                                        Trousers<span class="category-counter">(5)</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="lni-control-panel"></i>
-                                        Shirt<span class="category-counter">(8)</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="lni-github"></i>
-                                        Dress <span class="category-counter">(2)</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="lni-coffee-cup"></i>
-                                        Shoes and Sandals <span class="category-counter">(3)</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="lni-home"></i>
-                                        Hat <span class="category-counter">(4)</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="lni-pencil"></i>
-                                        Suit <span class="category-counter">(5)</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-
-                    </aside>
-                </div>
-                <div class="col-lg-9 col-md-12 col-xs-12 page-content">
+                <div class="col-lg-12 col-md-12 col-xs-12 page-content">
                     <div class="product-filter">
-                        <div class="Show-item">
-                            <span>Show Items</span>
-                            <form class="woocommerce-ordering" method="post">
-                                <label>
-                                    <select name="order" class="orderby">
-                                        <option selected="selected" value="menu-order">Hats</option>
-                                        <option value="popularity">Pants</option>
-                                        <option value="popularity">Suits</option>
-                                        <option value="popularity">Dresses</option>
-                                        <option value="popularity">Shoes</option>
-                                    </select>
-                                </label>
+                        <div class="short-name">
+                            <form role="search" id="search-form">
+                                <input type="search" class="form-control" autocomplete="off" name="s"
+                                       placeholder="Search..." id="search-input" value="">
+{{--                                <button type="submit" id="search-submit" class="search-btn"><i class="lni-search"></i>--}}
+{{--                                </button>--}}
                             </form>
                         </div>
-                        <ul class="nav nav-tabs">
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#grid-view"><i class="lni-grid"></i></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" data-toggle="tab" href="#list-view"><i class="lni-list"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="adds-wrapper">
-                        <div class="tab-content">
-                            <div id="grid-view" class="tab-pane fade">
-                                <div class="row">
-                                    @foreach($list as $item)
-                                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                                            <div class="featured-box">
-                                                <figure>
-                                                    <div class="icon">
-                                                        <span class="bg-green"><i class="lni-heart"></i></span>
-                                                        <span><i class="lni-bookmark"></i></span>
-                                                    </div>
-                                                    <img class="img-fluid" src="{{$item->images}}" alt="{{$item->title}}">
-                                                </figure>
-                                                <div class="feature-content">
-                                                    <div class="product">
-                                                        <a href="#">{{$item->category->name}}</a>
-                                                    </div>
-                                                    <h4><a href="#">{{$item->title}}</a></h4>
-                                                    <div class="meta-tag">
-                                                        <span><a href="/gift-detail"><i class="lni-user"></i>{{$item->account->fullName}}</a></span>
-                                                        <span><a href="/gift-detail"><i class="lni-map-marker"></i>{{$item->account->address}}</a></span>
-                                                    </div>
-                                                    <p class="dsc">{{$item->description}}.</p>
-                                                    <div class="listing-bottom">
-                                                        <a href="/gift-detail" class="btn btn-common float-right">View Details</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    @endforeach
-                                </div>
+                        <div class="container">
+                            <div class="Show-item" id="postsFilter">
+                                <form action="/category" method="get" name="filter-form">
+                                    <select name="categoryId">
+                                        <option value="0">Tất cả danh mục</option>
+                                        @foreach($category as $listCate)
+                                            <option
+                                                {{$selectCate == $listCate->id ? 'selected': ''}} value="{{$listCate->id}}">{{$listCate->category_name}}</option>
+                                        @endforeach
+                                    </select>
+                                </form>
                             </div>
+                            <div id="expandsFilter"></div>
+                        </div>
+                    </div>
+                    <div class="adds-wrapper" style="margin-right: 15%">
+                        <div class="tab-content">
                             <div id="list-view" class="tab-pane fade active show">
                                 <div class="row">
                                     @foreach($list as $item)
                                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                             <div class="featured-box">
                                                 <figure>
-                                                    <div class="icon">
-                                                        <span class="bg-green"><i class="lni-heart"></i></span>
-                                                        <span><i class="lni-bookmark"></i></span>
-                                                    </div>
-                                                    <a href="/gift-detail"><img class="img-fluid" src="{{$item->images}}" alt="{{$item->title}}"></a>
+                                                    <a href="/gift-detail/{{$item->id}}"><img class="img-thumbnail" width="50%" style="margin-left: 50%"
+                                                                                              src="{{$item->images}}"
+                                                                                              alt="{{$item->title}}"></a>
                                                 </figure>
                                                 <div class="feature-content">
-                                                    <h4><a href="/gift-detail">{{$item->title}}</a></h4>
+                                                    <h4><a href="/gift-detail/{{$item->id}}">{{$item->title}}</a></h4>
                                                     <div class="meta-tag">
                                                     <span>
-                                                    <a href="#"><i class="lni-user"></i>{{$item->account->fullName}}</a></a>
+                                                    <a href="#"><i
+                                                            class="lni-user"></i>{{$item->account->fullName}}</a>
                                                     </span>
                                                         <span>
                                                     <a href="#"><i class="lni-map-marker"></i>{{$item->account->address}}</a>
@@ -162,7 +76,8 @@
                                                     <p class="dsc">{{$item->description}}.</p>
                                                     <div class="listing-bottom">
 
-                                                        <a href="/gift-detail" class="btn btn-common float-right">View Details</a>
+                                                        <a href="/gift-detail/{{$item->id}}"
+                                                           class="btn btn-common float-right">View Details</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -177,6 +92,10 @@
             </div>
         </div>
     </div>
+    <script>
+        var selectCate = document.forms['filter-form']['categoryId'];
+        selectCate.onchange = function () {
+            document.forms['filter-form'].submit();
+        }
+    </script>
 @endsection
-
-

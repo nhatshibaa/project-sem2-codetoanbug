@@ -17,11 +17,12 @@ class CreateRequestsTable extends Migration
             $table->increments('id');
             $table->integer('idUser')->unsigned();
             $table->foreign('idUser')->references('id')->on('users');
+            $table->integer('idUserRequest');
             $table->integer('giftId')->unsigned();
             $table->foreign('giftId')->references('id')->on('gifts');
-            $table->string('title');
-            $table->string('content');
+            $table->text('content');
             $table->integer('status');
+            $table->timestamps();
         });
     }
 

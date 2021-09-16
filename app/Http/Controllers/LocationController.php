@@ -23,8 +23,4 @@ class LocationController extends Controller
         $districtId = $request->districtId;
         return Ward::where('maqh', $districtId)->get();
     }
-    public function getForm()
-    {
-        return view('test.demo');
-    }
 }

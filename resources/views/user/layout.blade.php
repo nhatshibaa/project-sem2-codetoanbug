@@ -32,10 +32,25 @@
                         <a class="linkedin" href="#"><i class="lni-linkedin-fill"></i></a>
                         <a class="google" href="#"><i class="lni-google-plus"></i></a>
                     </div>
-                    <div class="header-top-right float-right">
-                        <a href="/login" class="header-top-button"><i class="lni-lock"></i> Đăng nhập</a> |
-                        <a href="/register" class="header-top-button"><i class="lni-pencil"></i> Đăng ký</a>
-                    </div>
+                    @if(\Illuminate\Support\Facades\Session::has('username'))
+                        <li class="roof-social navbar dropdown" style="margin-left: 22%;z-index: 1050">
+                            <div class="">
+                                <a class=" dropdown-toggle" href="/logout" aria-haspopup="true"
+                                aria-expanded="false">
+                                    Xin chào, {{\Illuminate\Support\Facades\Session::get('username')}}</a>
+                            </div>
+                            <div class="dropdown-menu">
+                                <a href="/my-gift" class="dropdown-item">Món quà của tôi</a>
+                                <a href="/my-request" class="dropdown-item">Yêu cầu của tôi</a>
+                                <a href="/logout" class="dropdown-item">Đăng xuất</a>
+                            </div>
+                        </li>
+                    @else
+                        <div class="header-top-right float-right">
+                            <a href="/login" class="header-top-button"><i class="lni-lock"></i> Đăng nhập</a> |
+                            <a href="/register" class="header-top-button"><i class="lni-pencil"></i> Đăng ký</a>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>
@@ -60,7 +75,7 @@
                         </a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="/category"  aria-haspopup="true"
+                        <a class="nav-link dropdown-toggle" href="/category" aria-haspopup="true"
                            aria-expanded="false">
                             Danh mục
                         </a>
@@ -79,9 +94,15 @@
                         </a>
                     </li>
                 </ul>
-                <div class="post-btn">
-                    <a class="btn btn-common" href="/post"><i class="lni-pencil-alt"></i> Đăng bài </a>
-                </div>
+                @if(\Illuminate\Support\Facades\Session::has('username'))
+                    <div class="post-btn">
+                        <a class="btn btn-common" href="/post"><i class="lni-pencil-alt"></i> Đăng bài </a>
+                    </div>
+                @else
+                    <div class="post-btn">
+                        <a class="btn btn-common" href="/login"><i class="lni-pencil-alt"></i> Đăng bài </a>
+                    </div>
+                @endif
             </div>
         </div>
         <ul class="mobile-menu">
@@ -93,7 +114,7 @@
             <li>
                 <a href="/category">Danh mục</a>
             </li>
-                <a href="/blog">Blog</a>
+            <a href="/blog">Blog</a>
             </li>
         </ul>
     </nav>
@@ -117,7 +138,9 @@
                     <div class="widget">
                         <div class="footer-logo"><img src="/user/img/img.png" alt="logo-footer" width="170px"></div>
                         <div class="textwidget">
-                            <p>KidsClothesFree ra đời sẽ trở thành một địa chỉ đáng tin cậy từ những người có những bộ quần áo trẻ em đã qua sử dụng hoặc không dùng đến nữa, đến những người có nhu cầu tìm kiếm những bộ quần áo cho những đứa trẻ khi còn hạn chế về tài chính.</p>
+                            <p>KidsClothesFree ra đời sẽ trở thành một địa chỉ đáng tin cậy từ những người có những bộ
+                                quần áo trẻ em đã qua sử dụng hoặc không dùng đến nữa, đến những người có nhu cầu tìm
+                                kiếm những bộ quần áo cho những đứa trẻ khi còn hạn chế về tài chính.</p>
                         </div>
                         <ul class="mt-3 footer-social">
                             <li><a class="facebook" href="#"><i class="lni-facebook-filled"></i></a></li>
@@ -130,7 +153,7 @@
                 <div class="col-lg-4 col-md-4 col-xs-6 col-mb-12">
                     <div class="widget">
                         <h3 class="block-title">Hỗ Trợ</h3>
-                        <ul class="contact-footer" >
+                        <ul class="contact-footer">
                             <li><a style="color: whitesmoke" href="/about">- Giới thiệu</a></li>
                             <li><a style="color: whitesmoke" href="/blog">- Bài đọc</a></li>
                             <li><a style="color: whitesmoke" href="/policy">- Chính sách & Quy định</a></li>
@@ -185,6 +208,7 @@
 <script src="/user/js/main.js"></script>
 <script src="/user/js/form-validator.min.js"></script>
 <script src="/user/js/contact-form-script.min.js"></script>
+@include('sweetalert::alert')
 @yield('page-js')
 </body>
 </html>

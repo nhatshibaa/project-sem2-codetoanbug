@@ -7,10 +7,10 @@
     <title>Đăng ký</title>
 
     <!-- Font Icon -->
-    <link rel="stylesheet" href="/formUser/fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="/formRegister/fonts/material-icon/css/material-design-iconic-font.min.css">
 
     <!-- Main css -->
-    <link rel="stylesheet" href="/formUser/css/style.css">
+    <link rel="stylesheet" href="/formRegister/css/style.css">
 </head>
 <style>
     input[type=checkbox] {
@@ -24,7 +24,7 @@
     <div class="container">
         <div class="signup-content">
             <div class="signup-img">
-                <a href="/"><img src="/formUser/banner-register.jpg" width="1200" alt="" style="margin: 25px 15px 5px"></a>
+                <a href="/"><img src="/formRegister/banner-register.jpg" width="1200" alt="" style="margin: 25px 15px 5px"></a>
             </div>
             <div class="signup-form">
                 <form method="post" class="register-form" id="register-form" action="/admin/list-user">
@@ -55,7 +55,7 @@
                     </div>
                     <div class="form-group">
                         <label for="address">Địa chỉ :</label>
-                        <input type="text" name="address" id="address"/>
+                        <input type="text" name="address" id="address" placeholder="Số nhà"/>
                         @error('address')
                         <div class="text-danger">* {{ $message }}</div>
                         @enderror
@@ -123,6 +123,13 @@
                         @enderror
                     </div>
                     <div class="form-group">
+                        <label>Email :</label>
+                        <input type="email" name="email">
+                        @error('email')
+                        <div class="text-danger">* {{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="form-group">
                         <label>Số điện thoại :</label>
                         <input type="text" name="phone"/>
                         @error('phone')
@@ -131,7 +138,7 @@
                     </div>
                     <div class="form-group">
                         <label>Ảnh CMND mặt trước :</label>
-                        <input type="hidden" class="form-control" id="hello" name="imgCardID">
+                        <input type="hidden" class="form-control" id="hello" name="imgCardIDf">
                         <button type="button" id="upload_widgetn" class="btn btn-sm btn-primary">Chọn ảnh</button>
                         <div>
                             <img id="preview-img" src="" alt="" class="img-rounded" width="100px">
@@ -139,7 +146,7 @@
                     </div>
                     <div class="form-group">
                         <label>Ảnh CMND mặt sau :</label>
-                        <input type="hidden" class="form-control" id="hi" name="imgCardID">
+                        <input type="hidden" class="form-control" id="hi" name="imgCardIDb">
                         <button type="button" id="upload_widget" class="btn btn-sm btn-primary">Chọn ảnh</button>
                         <div>
                             <img id="preview-image" src="" alt="" class="img-rounded" width="100px">
@@ -160,8 +167,8 @@
 
 <!-- JS -->
 
-<script src="/formUser/vendor/jquery/jquery.min.js"></script>
-<script src="/formUser/js/main.js"></script>
+<script src="/formRegister/vendor/jquery/jquery.min.js"></script>
+<script src="/formRegister/js/main.js"></script>
 <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -212,6 +219,7 @@
     }, false);
 </script>
 @include('other.location')
+@include('sweetalert::alert')
 </body>
 </html>
 

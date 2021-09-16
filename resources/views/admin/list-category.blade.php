@@ -37,11 +37,15 @@
                                     @foreach($list as $item)
                                         <tr>
                                             <td>{{$item->id}}</td>
-                                            <td>{{$item->name}}</td>
+                                            <td>{{$item->category_name}}</td>
                                             <td>{{$item->createBy}}</td>
                                             <td>
-                                                <i class="fas fa-check-circle btn-outline-success" style="cursor: pointer; padding-right: 5px"></i>
-                                                <i class="fas fa-times btn-outline-danger" style="cursor: pointer"></i>
+                                                <button class="btn"><a href="/admin/category/{{ $item->id }}/edit" ><i class="fas fa-check-circle btn-outline-success" style="cursor: pointer; padding-right: 1px"></i></a></button>
+                                                <form style="display: inline" action="/admin/category/{{ $item->id }}" method="post">
+                                                    @method('delete')
+                                                    @csrf
+                                                    <button class="btn"><i class="fas fa-check-circle btn-outline-danger" style="cursor: pointer"></i></button>
+                                                </form>
                                             </td>
                                         </tr>
                                     @endforeach

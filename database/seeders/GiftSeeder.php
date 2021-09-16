@@ -30,7 +30,7 @@ class GiftSeeder extends Seeder
                 'age' => 5,
                 'created_at' => \Illuminate\Support\Carbon::now(),
                 'updated_at' => \Illuminate\Support\Carbon::now(),
-                'status' => 1
+                'status' => 1,
             ],
             [
                 'id' => 2,
@@ -45,7 +45,7 @@ class GiftSeeder extends Seeder
                 'age' => 7,
                 'created_at' => \Illuminate\Support\Carbon::now(),
                 'updated_at' => \Illuminate\Support\Carbon::now(),
-                'status' => 0,
+                'status' => 2,
 
             ], [
 
@@ -63,7 +63,7 @@ class GiftSeeder extends Seeder
                 'age' => 3,
                 'created_at' => \Illuminate\Support\Carbon::now(),
                 'updated_at' => \Illuminate\Support\Carbon::now(),
-                'status' => 0,
+                'status' => 1,
 
             ], [
 
@@ -80,7 +80,7 @@ class GiftSeeder extends Seeder
                 'age' => 2,
                 'created_at' => \Illuminate\Support\Carbon::now(),
                 'updated_at' => \Illuminate\Support\Carbon::now(),
-                'status' => 0,
+                'status' => 2,
 
             ], [
 

@@ -7,5 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
+    protected $table = 'categories';
     use HasFactory;
+
+    public function account()
+    {
+        return $this->hasOne(Users::class, 'id', 'idUser');
+    }
 }

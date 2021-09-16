@@ -23,7 +23,7 @@
                 <div class="col-lg-10 col-md-12 col-xs-12">
                     <div id="categories-icon-slider" class="categories-wrapper owl-carousel owl-theme">
                         <div class="item">
-                            <a href="category.html">
+                            <a href="/category">
                                 <div class="category-icon-item">
                                     <div class="icon-box">
                                         <div class="icon">
@@ -35,7 +35,7 @@
                             </a>
                         </div>
                         <div class="item">
-                            <a href="category.html">
+                            <a href="/category">
                                 <div class="category-icon-item">
                                     <div class="icon-box">
                                         <div class="icon">
@@ -47,7 +47,7 @@
                             </a>
                         </div>
                         <div class="item">
-                            <a href="category.html">
+                            <a href="/category">
                                 <div class="category-icon-item">
                                     <div class="icon-box">
                                         <div class="icon">
@@ -59,7 +59,7 @@
                             </a>
                         </div>
                         <div class="item">
-                            <a href="category.html">
+                            <a href="/category">
                                 <div class="category-icon-item">
                                     <div class="icon-box">
                                         <div class="icon">
@@ -71,7 +71,7 @@
                             </a>
                         </div>
                         <div class="item">
-                            <a href="category.html">
+                            <a href="/category">
                                 <div class="category-icon-item">
                                     <div class="icon-box">
                                         <div class="icon">
@@ -83,7 +83,7 @@
                             </a>
                         </div>
                         <div class="item">
-                            <a href="category.html">
+                            <a href="/category">
                                 <div class="category-icon-item">
                                     <div class="icon-box">
                                         <div class="icon">
@@ -110,24 +110,20 @@
                     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
                         <div class="featured-box">
                             <figure>
-                                <div class="icon">
-                                    <span class="bg-green"><i class="lni-heart"></i></span>
-                                    <span><i class="lni-bookmark"></i></span>
-                                </div>
-                                <img class="img-fluid" src="{{$item->images}}" alt="{{$item->title}}">
+                                <img class="img-fluid" src="{{$item->firstImg}}" alt="{{$item->title}}">
                             </figure>
                             <div class="feature-content">
                                 <div class="product">
                                     <a href="#">{{$item->category->name}}</a>
                                 </div>
-                                <h4><a href="#">{{$item->title}}</a></h4>
+                                <h4><a href="/gift-detail/{{$item->id}}">{{$item->title}}</a></h4>
                                 <div class="meta-tag">
-                                    <span><a href="/gift-detail"><i class="lni-user"></i>{{$item->account->fullName}}</a></span>
-                                    <span><a href="/gift-detail"><i class="lni-map-marker"></i>{{$item->account->address}}</a></span>
+                                    <span><a href="#"><i class="lni-user"></i>{{$item->account->fullName}}</a></span>
+                                    <span><a href="#"><i class="lni-map-marker"></i>{{$item->account->address}}</a></span>
                                 </div>
                                 <p class="dsc">{{$item->description}}.</p>
                                 <div class="listing-bottom">
-                                    <a href="/gift-detail" class="btn btn-common float-right">Xem Chi Tiết</a>
+                                    <a href="/gift-detail/{{$item->id}}" class="btn btn-common float-right">Xem Chi Tiết</a>
                                 </div>
                             </div>
                         </div>
@@ -136,6 +132,7 @@
             </div>
         </div>
     </section>
+
 
     <section id="blog" class="section-padding">
 

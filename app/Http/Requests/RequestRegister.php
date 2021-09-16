@@ -31,7 +31,7 @@ class RequestRegister extends FormRequest
             'city' => 'required',
             'district' => 'required',
             'ward' => 'required',
-            'username' => 'required|min:8|max:25',
+            'username' => 'required|min:5|max:25',
             'password' => 'required|min:6|max:9',
             'phone' => 'required|size:10',
         ];
@@ -50,7 +50,7 @@ class RequestRegister extends FormRequest
             'district.required' => 'Vui lòng chọn quận,huyện.',
             'ward.required' => 'Vui lòng chọn xã,phường.',
             'username.required' => 'Vui lòng nhập tên tài khoản.',
-            'username.min' => 'Tên tài khoản phải lớn hơn 8 ký tự.',
+            'username.min' => 'Tên tài khoản phải lớn hơn 5 ký tự.',
             'username.max' => 'Tên tài khoản phải nhỏ hơn 25 ký tự.',
             'password.required' => 'Vui lòng nhập mật khẩu.',
             'password.min' => 'Mật khẩu phải lớn hơn 6 ký tự.',

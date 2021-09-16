@@ -33,10 +33,6 @@
                                         <th>Title</th>
                                         <th>Images</th>
                                         <th>Description</th>
-                                        <th>Content</th>
-                                        <th>Age Range</th>
-                                        <th>Color</th>
-                                        <th>Size</th>
                                         <th>Status</th>
                                         <th>Action</th>
                                     </tr>
@@ -48,23 +44,25 @@
                                             <td>{{$item->idUser}}</td>
                                             <td>{{$item->categoryId}}</td>
                                             <td>{{$item->title}}</td>
-                                            <td><img src="{{$item->images}}" alt="{{$item->title}}" width="100"></td>
+                                            <td>
+                                                  <img src="{{$item->firstImg}}" alt="{{$item->title}}" width="100">
+                                            </td>
                                             <td>{{$item->description}}</td>
-                                            <td>{{$item->content}}</td>
-                                            <td>{{$item->age}}</td>
-                                            <td>{{$item->color}}</td>
-                                            <td>{{$item->size}}</td>
                                             <td>{{$item->status}}</td>
                                             <td>
                                                 <form action="/admin/list-gift/{{$item->id}}" method="post">
                                                     @csrf
-                                                    <button type="submit" class="btn"><i class="fas fa-check-circle btn-outline-success" style="cursor: pointer; padding-right: 1px"></i></button>
+                                                    <button type="submit" class="btn"><i
+                                                            class="fas fa-check-circle btn-outline-success"
+                                                            style="cursor: pointer; padding-right: 1px"></i></button>
                                                 </form>
 
                                                 <form action="/admin/list-gift/{{$item->id}}" method="post">
                                                     @method('delete')
                                                     @csrf
-                                                    <button type="submit" class="btn"><i class="fas fa-times btn-outline-danger" style="cursor: pointer; padding-right: 5px"></i></button>
+                                                    <button type="submit" class="btn"><i
+                                                            class="fas fa-times btn-outline-danger"
+                                                            style="cursor: pointer; padding-right: 5px"></i></button>
                                                 </form>
                                             </td>
                                         </tr>

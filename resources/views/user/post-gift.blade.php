@@ -31,7 +31,7 @@
                         <div class="dashboard-box">
                             <h2 class="dashbord-title">Thông tin bài đăng</h2>
                         </div>
-                        <form class="dashboard-wrapper" action="/post" method="post">
+                        <form class="dashboard-wrapper" action="/admin/list-gift" method="post">
                             @csrf
                             <div class="row">
                                 <div class="form-group mb-3 col-8">
@@ -145,19 +145,19 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-
                                 <label>Ảnh bài đăng</label>
-                                <input type="hidden" class="form-control" id="hello">
-                                <button type="button" id="upload_widgetn" class="btn btn-sm btn-primary">Chọn ảnh</button>
-                                <div class="p-sm hidden" img id="preview-div">
+                                <input type="hidden" class="form-control" id="hello" name="image">
+                                <button type="button" id="upload_widgetn" class="btn btn-sm btn-primary">Chọn ảnh
+                                </button>
+                                <div class="p-sm hidden"  id="preview-div">
                                 </div>
                             </div>
-                            </label>
                             <div class="tg-checkbox">
                                 <div class="custom-control custom-checkbox">
                                     <input type="checkbox" class="custom-control-input"
                                            id="tg-agreetermsandrules">
-                                    <label class="custom-control-label" for="tg-agreetermsandrules">Tôi đồng ý với <a href="/policy">Điều khoản & Qui định đăng bài</a></label>
+                                    <label class="custom-control-label" for="tg-agreetermsandrules">Tôi đồng ý với <a
+                                            href="/policy">Điều khoản & Qui định đăng bài</a></label>
                                 </div>
                             </div>
                             <button class="btn btn-common" type="submit" style="margin-left: 40%">Đăng bài
@@ -179,7 +179,7 @@
                     var previewdiv = document.getElementById('preview-div');
                     if (inputThumbnail) {
                         var currentImagevalue = inputThumbnail.value;
-                        if (currentImagevalue.length > 0){
+                        if (currentImagevalue.length > 0) {
                             currentImagevalue += ','
                         }
                         currentImagevalue += result.info.secure_url;
@@ -206,3 +206,5 @@
         CKEDITOR.replace('editor1');
     </script>
 @endsection
+@include('sweetalert::alert')
+
