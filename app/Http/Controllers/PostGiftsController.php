@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\RequestPost;
-use App\Http\Requests\StorePostRequest;
 use App\Models\Admin;
 use App\Models\Gifts;
 use Illuminate\Database\Eloquent\Model;

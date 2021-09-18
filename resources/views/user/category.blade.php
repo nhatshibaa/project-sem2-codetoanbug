@@ -24,14 +24,6 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-xs-12 page-content">
                     <div class="product-filter">
-                        <div class="short-name">
-                            <form role="search" id="search-form">
-                                <input type="search" class="form-control" autocomplete="off" name="s"
-                                       placeholder="Search..." id="search-input" value="">
-{{--                                <button type="submit" id="search-submit" class="search-btn"><i class="lni-search"></i>--}}
-{{--                                </button>--}}
-                            </form>
-                        </div>
                         <div class="container">
                             <div class="Show-item" id="postsFilter">
                                 <form action="/category" method="get" name="filter-form">
@@ -56,7 +48,7 @@
                                             <div class="featured-box">
                                                 <figure>
                                                     <a href="/gift-detail/{{$item->id}}"><img class="img-thumbnail" width="50%" style="margin-left: 50%"
-                                                                                              src="{{$item->images}}"
+                                                                                              src="{{$item->FirstImg}}"
                                                                                               alt="{{$item->title}}"></a>
                                                 </figure>
                                                 <div class="feature-content">

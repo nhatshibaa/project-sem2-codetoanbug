@@ -41,7 +41,7 @@
                             </div>
                             <div class="dropdown-menu">
                                 <a href="/my-gift" class="dropdown-item">Món quà của tôi</a>
-                                <a href="/my-request" class="dropdown-item">Yêu cầu của tôi</a>
+                                <a href="/my-request" class="dropdown-item">Yêu cầu xin</a>
                                 <a href="/logout" class="dropdown-item">Đăng xuất</a>
                             </div>
                         </li>

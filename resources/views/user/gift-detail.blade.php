@@ -91,7 +91,8 @@
                                 </div>
                                 <form action="/gift-detail/{{$item->id}}" method="post">
                                     @csrf
-                                    @if(\Illuminate\Support\Facades\Session::has('idUser'))
+                                    <input type="hidden" name="userId" value="{{$account->id}}">
+                                    @if(\Illuminate\Support\Facades\Session::has('username'))
                                         <textarea name="content" id="" cols="37" rows="4"
                                                   placeholder="Nội dung"></textarea>
                                         <input type="hidden" value="{{$item->id}}" name="giftId">

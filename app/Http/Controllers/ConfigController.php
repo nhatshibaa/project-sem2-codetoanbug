@@ -27,7 +27,8 @@ class ConfigController extends Controller
     public function create()
     {
         //
-        return view("admin.form");
+        $configPage = Configs::find(1);
+        return view("admin.form", ['configPage'=>$configPage]);
     }
 
     /**
@@ -40,7 +41,7 @@ class ConfigController extends Controller
     {
         //
         $request->validated();
-        $obj = new Configs();
+        $obj = Configs::find(1);
         $obj->aboutUsPage = $request->get('about-us');
         $obj->policyPage = $request->get('policy-page');
         $obj->titlePage = $request->get('Title-Page');

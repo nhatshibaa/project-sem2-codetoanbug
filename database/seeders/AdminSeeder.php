@@ -20,30 +20,16 @@ class AdminSeeder extends Seeder
             [
                 'id' => 1,
                 'username' => 'phamducduy',
-                'password' => 'phamducduy',
+                'password' => '$2y$10$OSkIF0eSpYEFk1szucdRf.cbp8PVuFOR.mGr/tqTKoiWex2nD2Ja2',
                 'fullName' => 'Phạm Đức Duy',
                 'email' => 'duypdth2009006@fpt.edu.vn',
             ],
             [
                 'id' => 2,
-                'username' => '',
-                'password' => '',
-                'fullName' => '',
-                'email' => '',
-            ],
-            [
-                'id' => 3,
-                'username' => '',
-                'password' => '',
-                'fullName' => '',
-                'email' => '',
-            ],
-            [
-                'id' => 4,
-                'username' => '',
-                'password' => '',
-                'fullName' => '',
-                'email' => '',
+                'username' => 'admin',
+                'password' => '$2y$10$OSkIF0eSpYEFk1szucdRf.cbp8PVuFOR.mGr/tqTKoiWex2nD2Ja2',
+                'fullName' => 'Phạm Đức Duy',
+                'email' => 'duypdth2009006@fpt.edu.vn',
             ]
         ]);
         \Illuminate\Support\Facades\DB::statement('SET FOREIGN_KEY_CHECKS = 1');

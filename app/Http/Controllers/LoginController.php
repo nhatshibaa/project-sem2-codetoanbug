@@ -42,13 +42,18 @@ class LoginController extends Controller
         $username = $request->get('username');
         $password = $request->get('password');
         $login = Users::where('username', $username)->first();
-        if (Hash::check($password, $login->password_hash)) {
-            $request->session()->put('username', $login->username);
-            $request->session()->put('idUser', $login->id);
-            alert()->success('Success', 'Đăng nhập thành công');
-            return redirect('/');
-        } else {
-            alert()->error('Error', 'Tài khoản hoặc mật khẩu không đúng');
+        if ($login && $login->status == 1){
+            if (Hash::check($password, $login->password_hash)) {
+                $request->session()->put('username', $login->username);
+                $request->session()->put('idUser', $login->id);
+                alert()->success('Success', 'Đăng nhập thành công');
+                return redirect('/');
+            } else {
+                alert()->error('Error', 'Tài khoản hoặc mật khẩu không đúng');
+                return redirect('/login');
+            }
+        }else{
+            alert()->error('loi', 'k bt');
             return redirect('/login');
         }
     }

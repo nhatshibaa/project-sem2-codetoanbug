@@ -12,9 +12,6 @@ use Illuminate\Http\Request;
 class AdminController extends Controller
 {
     //
-    public function index(){
-        return view("admin.form");
-    }
     public function listAdmin(){
         return view("admin.list-admin", ['list'=> Admin::paginate(1)]);
     }

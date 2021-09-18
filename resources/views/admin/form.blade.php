@@ -23,14 +23,14 @@
                                     @csrf
                                     <div class="form-group md-3">
                                         <label class="control-label">Policy Page</label>
-                                        <textarea name="policy-page" id="ckeditor" cols="147" rows="10"></textarea>
+                                        <textarea name="policy-page" id="ckeditor" cols="147" rows="10">{{$configPage->policyPage}}</textarea>
                                         @error('policy-page')
                                         <div class="text-danger">* {{ $message }}</div>
                                         @enderror
                                     </div>
                                     <div class="form-group md-3">
                                         <label class="control-label">About Us Page</label>
-                                        <textarea name="about-us" id="ckeditor1" cols="147" rows="10"></textarea>
+                                        <textarea name="about-us" id="ckeditor1" cols="147" rows="10">{{$configPage->aboutUsPage}}</textarea>
                                         @error('about-us')
                                         <div class="text-danger">* {{ $message }}</div>
                                         @enderror
@@ -40,7 +40,7 @@
                                         <label class="col-lg-4 col-form-label">Title Page
                                         </label>
                                         <div class="col-lg-6">
-                                            <input type="text" class="form-control" name="Title-Page" placeholder="Enter a Title Page..">
+                                            <input type="text" class="form-control" name="Title-Page" placeholder="Enter a Title Page..">{{$configPage->titlePage}}
                                             @error('Title-Page')
                                             <div class="text-danger">* {{ $message }}</div>
                                             @enderror

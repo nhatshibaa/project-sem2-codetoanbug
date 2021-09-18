@@ -39,4 +39,6 @@ class Users extends Model
     {
         return $this->hasOne(Ward::class, 'xaid', 'ward');
     }
+
+    protected $table='users';
 }

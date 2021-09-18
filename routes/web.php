@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ConfigController;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\LoginAdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MyGiftController;
 use App\Http\Controllers\PolicyController;
@@ -27,7 +28,11 @@ use RealRashid\SweetAlert\Facades\Alert;
 |
 */
 //Admin
-Route::get('/admin',[AdminController::class, 'index']);
+Route::get('/admin',[LoginAdminController::class, 'index']);
+Route::get('/admin/login',[LoginAdminController::class, 'login']);
+Route::get('/admin/logout',[LoginAdminController::class, 'logout']);
+Route::post('/admin/login',[LoginAdminController::class, 'store']);
+
 Route::get('/admin/form',[ConfigController::class, 'create']);
 Route::post('/admin/form',[ConfigController::class, 'store']);
 
@@ -100,3 +105,5 @@ Route::get('/send-refuse', [SendEmailController::class, 'refuse']);
 //Account
 Route::get('/my-gift', [MyGiftController::class, 'index']);
 Route::get('/my-request', [RequestGiftController::class, 'index']);
+Route::post('/my-request/{id}', [RequestGiftController::class, 'update']);
+Route::delete('/my-request/{id}', [RequestGiftController::class, 'destroy']);
