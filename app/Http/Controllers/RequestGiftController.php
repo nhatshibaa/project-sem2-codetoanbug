@@ -22,7 +22,7 @@ class RequestGiftController extends Controller
         //
         $idUser = session()->get('idUser');
         $itemRequest = Requests::where('idUser', $idUser)->get();
-        return view('user.my-request', ['itemRequest' => $itemRequest] );
+        return view('user.my-request', ['itemRequest' => $itemRequest]);
     }
 
     /**
@@ -105,11 +105,11 @@ class RequestGiftController extends Controller
         $gift->status = 1;
         $gift->updated_at = Carbon::now();
         $gift->save();
-        alert()->success('Success', 'oke');
-        $data = array('title' => 'Xin chao vietnam', 'content' => 'Day la noi dung', 'phone'=>$user->phone);
-        Mail::send('email.confirm-request', $data, function ($message) use ($userRequest) {
+        alert()->success('Success', 'Đã chấp nhận yêu cầu');
+        $data = array('title' => 'Xin chao vietnam', 'content' => 'Day la noi dung', 'phone' => $user->phone, 'fullname'=>$user->fullName);
+        Mail::send('email.request.confirm-request', $data, function ($message) use ($userRequest) {
             $message->to($userRequest->email, 'Tutorials Point')->subject
-            ('Thông báo chờ admin phê duyệt tài khoản!');
+            ('Thông báo chấp nhận yêu cầu!');
             $message->from('kidsclothesfree@gmail.com', 'Đội ngũ KidsClothesFree');
         });
         return redirect('/');
@@ -132,11 +132,11 @@ class RequestGiftController extends Controller
         $userRequest = Users::find($obj->idUserRequest);
         $user = Users::find($obj->idUser);
 
-        alert()->success('Success', 'oke');
-        $data = array('title' => 'Xin chao vietnam', 'content' => 'Day la noi dung', 'phone'=>$user->phone);
-        Mail::send('email.refuse', $data, function ($message) use ($userRequest) {
+        alert()->success('Success', 'Đã từ chối yêu cầu');
+        $data = array('title' => 'Xin chao vietnam', 'content' => 'Day la noi dung');
+        Mail::send('email.request.refuse', $data, function ($message) use ($userRequest) {
             $message->to($userRequest->email, 'Tutorials Point')->subject
-            ('Thông báo chờ admin phê duyệt tài khoản!');
+            ('Thông báo từ chối yêu cầu!');
             $message->from('kidsclothesfree@gmail.com', 'Đội ngũ KidsClothesFree');
         });
         return redirect('/');

@@ -6,10 +6,10 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="breadcrumb-wrapper">
-                        <h2 class="product-title">Bài đăng của tôi</h2>
+                        <h2 class="product-title">Yêu cầu xin</h2>
                         <ol class="breadcrumb">
                             <li><a href="#">Trang chủ /</a></li>
-                            <li class="current">Bài đăng của tôi</li>
+                            <li class="current">Yêu cầu xin</li>
                         </ol>
                     </div>
                 </div>
@@ -93,12 +93,12 @@
                                                 <div class="btns-actions">
                                                     <form action="/my-request/{{$item->id}}" method="post">
                                                         @csrf
-                                                        <button {{$item->button}} class="btn-action btn-view" type="submit"><i class="lni-check-mark-circle"></i></button>
+                                                        <button {{$item->button}} class="btn-action btn-view" type="submit" style="cursor: pointer"><i class="lni-check-mark-circle"></i></button>
                                                     </form>
                                                     <form action="/my-request/{{$item->id}}" method="post">
                                                         @csrf
                                                         @method('delete')
-                                                        <button {{$item->button}} class="btn-action btn-delete" type="submit"><i class="lni-trash"></i></button>
+                                                        <button {{$item->button}} class="btn-action btn-delete" type="submit" style="cursor: pointer"><i class="lni-trash"></i></button>
                                                     </form>
                                                 </div>
                                             </td>

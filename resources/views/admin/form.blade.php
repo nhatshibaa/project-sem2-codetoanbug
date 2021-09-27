@@ -48,7 +48,7 @@
                                     </div>
                                     <div class="form-group md-3">
                                         <label class="control-label">Description Page</label>
-                                        <textarea name="description" id="description" cols="147" rows="10"></textarea>
+                                        <textarea name="description" id="description" cols="147" rows="10">{{$configPage->descriptionPage}}</textarea>
                                         @error('description')
                                         <div class="text-danger">* {{ $message }}</div>
                                         @enderror
@@ -56,8 +56,7 @@
                                     </div>
                                     <div class="form-group md-3">
                                         <label class="control-label">Keyword Page</label>
-                                        <textarea name="keyword" id="keyword" cols="147" rows="10"></textarea>
-
+                                        <textarea name="keyword" id="keyword" cols="147" rows="10">{{$configPage->keywordPage}}</textarea>
                                         @error('keyword')
                                         <div class="text-danger">* {{ $message }}</div>
                                         @enderror

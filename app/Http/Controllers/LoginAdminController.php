@@ -19,7 +19,7 @@ class LoginAdminController extends Controller
     {
         $configPage = Configs::find(1);
         if (session()->has('usernameAdmin')) {
-            return view("admin.form",['configPage'=>$configPage]);
+            return view("admin.index",['configPage'=>$configPage]);
         }
         else{
             return redirect('/admin/login');

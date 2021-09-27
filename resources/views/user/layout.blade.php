@@ -33,7 +33,7 @@
                         <a class="google" href="#"><i class="lni-google-plus"></i></a>
                     </div>
                     @if(\Illuminate\Support\Facades\Session::has('username'))
-                        <li class="roof-social navbar dropdown" style="margin-left: 22%;z-index: 1050">
+                        <li class="roof-social navbar dropdown" style="margin-left: 21%;z-index: 1050">
                             <div class="">
                                 <a class=" dropdown-toggle" href="/logout" aria-haspopup="true"
                                 aria-expanded="false">

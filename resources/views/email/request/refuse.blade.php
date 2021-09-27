@@ -195,7 +195,7 @@
                                                 <td style="font-size:30px; font-weight: 600; color: #ffffff; text-align:center;"
                                                     class="mobile-spacing">
                                                     <div class="mobile-br">&nbsp;</div>
-                                                    Tài khoản của bạn đang đợi phê duyệt
+                                                    Thông báo từ chối yêu cầu xin
                                                     <br>
                                                 </td>
                                             </tr>
@@ -218,10 +218,11 @@
                                     <td style="background-color:#ffffff; padding: 0 20px">
                                         <br>
                                         <br>
-                                        <span style="color:#3bcdb0; font-size:20px; font-weight:bold;">Chỉ còn đợi admin phê duyệt tài khoản của bạn</span>
+                                        <span style="color:#3bcdb0; font-size:20px; font-weight:bold;"></span>
                                         <br>
                                         <p>
-                                            {{$phone}}
+                                            Yêu cầu xin của bạn chưa được chủ sở hữu chấp nhận. Bạn có thể vui lòng gửi
+                                            lại lời nhắn để xin sản phẩm thành công. Xin cảm ơn!
                                         </p>
                                     </td>
                                 </tr>

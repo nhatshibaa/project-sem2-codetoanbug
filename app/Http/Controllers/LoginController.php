@@ -53,7 +53,7 @@ class LoginController extends Controller
                 return redirect('/login');
             }
         }else{
-            alert()->error('loi', 'k bt');
+            alert()->error('Error', 'Tài khoản không tồn tại hoặc chưa được duyệt');
             return redirect('/login');
         }
     }
