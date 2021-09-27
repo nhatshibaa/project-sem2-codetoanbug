@@ -41,6 +41,7 @@ class ConfigController extends Controller
     {
         //
         $request->validated();
+//        $obj = new Configs();
         $obj = Configs::find(1);
         $obj->aboutUsPage = $request->get('about-us');
         $obj->policyPage = $request->get('policy-page');

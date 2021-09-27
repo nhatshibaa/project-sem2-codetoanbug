@@ -77,12 +77,6 @@ class RegisterController extends Controller
         $obj->ward = $request->get('ward');
         $obj->status = 0;
         $obj->save();
-        $data = array('title' => 'Xin chao vietnam', 'content' => 'Day la noi dung');
-        Mail::send('email.progress', $data, function ($message) use ($obj) {
-            $message->to($obj->email, 'Tutorials Point')->subject
-            ('Thông báo chờ admin phê duyệt tài khoản!');
-            $message->from('kidsclothesfree@gmail.com', 'Đội ngũ KidsClothesFree');
-        });
         alert('Đăng ký thành công', 'Vui lòng chờ admin duyệt tài khoản và gửi email thông báo!', 'success');
         return redirect('/');
     }
@@ -119,12 +113,19 @@ class RegisterController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $obj = Admin::find($id);
+        $obj = Users::find($id);
         $obj->status = 1;
         $obj->updated_at = \Carbon\Carbon::now();
         $obj->save();
-//        alert('Phê duyệt tài khoản thành công', 'Đã gửi email thông báo!', 'success');
-        return redirect('admin/list-user');
+        $user = Users::find($obj->idUser);
+        $data = array('title' => 'Xin chao vietnam', 'content' => 'Day la noi dung', 'username'=>$obj->username, 'password'=>$obj->password);
+        Mail::send('email.register.confirm', $data, function ($message) use ($obj) {
+            $message->to($obj->email, 'Tutorials Point')->subject
+            ('Thông báo phê duyệt tài khoản thành công!');
+            $message->from('kidsclothesfree@gmail.com', 'Đội ngũ KidsClothesFree');
+        });
+        alert()->success('Phê duyệt tài khoản thành công', 'Đã gửi email thông báo!');
+        return redirect('admin/list-user-accept');
     }
 
     /**
@@ -135,12 +136,22 @@ class RegisterController extends Controller
      */
     public function destroy($id)
     {
-        $obj = Admin::find($id);
+        $obj = Users::find($id);
         $obj->status = -1;
         $obj->updated_at = \Carbon\Carbon::now();
         $obj->save();
-//        alert('Từ chối tài khoản thành công', 'Đã gửi email thông báo!', 'success');
-        return redirect('admin/list-user');
+
+        $user = Users::find($obj->idUser);
+
+        $data = array('title' => 'Xin chao vietnam', 'content' => 'Day la noi dung');
+        Mail::send('email.register.refuse', $data, function ($message) use ($obj) {
+            $message->to($obj->email, 'Tutorials Point')->subject
+            ('Thông báo từ chối tài khoản!');
+            $message->from('kidsclothesfree@gmail.com', 'Đội ngũ KidsClothesFree');
+        });
+
+        alert('Từ chối tài khoản thành công', 'Đã gửi email thông báo!', 'success');
+        return redirect('admin/list-user-refuse');
 
     }
 }

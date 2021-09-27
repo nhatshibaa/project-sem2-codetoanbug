@@ -152,12 +152,12 @@
                             <img id="preview-image" src="" alt="" class="img-rounded" width="100px">
                         </div>
                     </div>
-                    <div class="form-row">
-                        <input type="checkbox" name="checkbox">
-                        <label>Tôi đồng ý với tất cả <a href="/policy">Điều khoản và Chính sách</a></label>
-                    </div>
                     <div class="form-submit" style="padding-right: 40%">
                         <input type="submit" value="Đăng ký" class="submit" name="submit" id="submit"/>
+                    </div>
+                    <br>
+                    <div class="form-row">
+                        <label style="margin-left: 32%; font-size: 12px">Đã có tài khoản! <a href="/login">Đăng nhập</a></label>
                     </div>
                 </form>
             </div>

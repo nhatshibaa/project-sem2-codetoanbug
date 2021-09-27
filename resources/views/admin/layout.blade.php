@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +8,7 @@
     <title>Quixlab</title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon.png">
-    @yield('page-css')
+@yield('page-css')
 <!-- Custom Stylesheet -->
     <link href="/assets/css/style.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/8b03973819.js" crossorigin="anonymous"></script>
@@ -27,7 +26,7 @@
 
 {{--    Main wrapper start--}}
 <div id="main-wrapper">
-{{--        Nav header start--}}
+    {{--        Nav header start--}}
     <div class="nav-header">
         <div class="brand-logo">
             <a href="/admin">
@@ -39,9 +38,9 @@
             </a>
         </div>
     </div>
-{{--        Nav header end--}}
+    {{--        Nav header end--}}
 
-{{--        Header start--}}
+    {{--        Header start--}}
     <div class="header">
         <div class="header-content clearfix">
 
@@ -94,87 +93,75 @@
             </div>
         </div>
     </div>
-{{--  Header end ti-comment-alt--}}
+    {{--  Header end ti-comment-alt--}}
 
 
-{{--  Sidebar start--}}
+    {{--  Sidebar start--}}
     <div class="nk-sidebar">
         <div class="nk-nav-scroll">
             <ul class="metismenu" id="menu">
-{{--                <li class="nav-label">Dashboard</li>--}}
-{{--                <li>--}}
-{{--                    <a href="/admin" aria-expanded="false">--}}
-{{--                        <i class="icon-speedometer menu-icon"></i><span class="nav-text">Dashboard</span>--}}
-{{--                    </a>--}}
-{{--                </li>--}}
-                <li class="nav-label">Forms</li>
+                <li class="nav-label">Dashboard</li>
                 <li>
-                    <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                        <i class="icon-note menu-icon"></i><span class="nav-text">Forms</span>
+                    <a href="/admin" aria-expanded="false">
+                        <i class="icon-speedometer menu-icon"></i><span class="nav-text">Dashboard</span>
                     </a>
+                </li>
+                <li class="nav-label">Pages</li>
+                <li>
+                    <a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="fas fa-users-cog"></i>Admin</a>
                     <ul aria-expanded="false">
-                        <li><a href="/admin/form"><i class="fas fa-cogs"></i>Form Config </a></li>
+                        <li><a href="#">Edit </a></li>
+                        <li><a href="/admin/list-admin">List </a></li>
+                    </ul>
+                </li>
+                <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="fas fa-users"></i>Users</a>
+                    <ul aria-expanded="false">
+                        <li><a href="/admin/list-user">List User </a></li>
+                        <li><a href="/admin/list-user-accept">List User Accept </a></li>
+                        <li><a href="/admin/list-user-refuse">List User Refuse </a></li>
+                    </ul>
+                </li>
+                <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="fas fa-gift"></i>Gifts</a>
+                    <ul aria-expanded="false">
+                        <li><a href="/admin/list-gift">List Gift </a></li>
+                        <li><a href="/admin/list-gift-accept">List Gift Accept </a></li>
+                        <li><a href="/admin/list-gift-refuse">List Gift Refuse </a></li>
+                    </ul>
+                </li>
+                <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="fas fa-th-list"></i>Categories</a>
+                    <ul aria-expanded="false">
+                        <li><a href="/admin/create-category">Create Category </a></li>
+                        <li><a href="/admin/list-category">List Category </a></li>
+                    </ul>
+                </li>
+                <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="far fa-newspaper"></i>Articles</a>
+                    <ul aria-expanded="false">
+                        <li><a href="#">Edit </a></li>
+                        <li><a href="/admin/list-category">List </a></li>
                     </ul>
                 </li>
                 <li class="nav-label">Pages</li>
                 <li>
-                    <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                        <i class="icon-notebook menu-icon"></i><span class="nav-text">Pages</span>
-                    </a>
-                    <ul aria-expanded="false">
-                        <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="fas fa-users-cog"></i>Admin</a>
-                            <ul aria-expanded="false">
-                                <li><a href="#">Edit </a></li>
-                                <li><a href="/admin/list-admin">List </a></li>
-                            </ul>
-                        </li>
-                        <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="fas fa-users"></i>Users</a>
-                            <ul aria-expanded="false">
-                                <li><a href="/admin/list-user">List User </a></li>
-                                <li><a href="/admin/list-user-accept">List User Accept </a></li>
-                                <li><a href="/admin/list-user-refuse">List User Refuse </a></li>
-                            </ul>
-                        </li>
-                        <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="fas fa-gift"></i>Gifts</a>
-                            <ul aria-expanded="false">
-                                <li><a href="/admin/list-gift">List Gift </a></li>
-                                <li><a href="/admin/list-gift-accept">List Gift Accept </a></li>
-                                <li><a href="/admin/list-gift-refuse">List Gift Refuse </a></li>
-                            </ul>
-                        </li>
-                        <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="fas fa-th-list"></i>Categories</a>
-                            <ul aria-expanded="false">
-                                <li><a href="/admin/create-category">Create Category </a></li>
-                                <li><a href="/admin/list-category">List Category </a></li>
-                            </ul>
-                        </li>
-                        <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="far fa-newspaper"></i>Articles</a>
-                            <ul aria-expanded="false">
-                                <li><a href="#">Edit </a></li>
-                                <li><a href="/admin/list-category">List </a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
+                <li><a href="/admin/form"><i class="fas fa-cogs"></i>Form Config </a></li>
             </ul>
         </div>
     </div>
-{{--    Sidebar end--}}
+    {{--    Sidebar end--}}
 
 
-{{--        Content body start--}}
+    {{--        Content body start--}}
     @yield('content')
-{{--        Content body end--}}
+    {{--        Content body end--}}
 
 
-{{--        Footer start--}}
+    {{--        Footer start--}}
     <div class="footer">
         <div class="copyright">
             <p>Copyright &copy; Designed & Developed by <a href="https://themeforest.net/user/quixlab">Quixlab</a> 2018
             </p>
         </div>
     </div>
-{{--        Footer end--}}
+    {{--        Footer end--}}
 </div>
 {{--    Main wrapper end--}}
 
@@ -196,7 +183,7 @@
 @yield('page-js')
 {{--option--}}
 <script>
-    (function($) {
+    (function ($) {
         "use strict"
         new quixSettings({
             version: "light", //2 options "light" and "dark"
@@ -212,5 +199,6 @@
         });
     })(jQuery);
 </script>
+@include('sweetalert::alert')
 </body>
 </html>

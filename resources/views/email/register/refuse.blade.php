@@ -195,7 +195,7 @@
                                                 <td style="font-size:30px; font-weight: 600; color: #ffffff; text-align:center;"
                                                     class="mobile-spacing">
                                                     <div class="mobile-br">&nbsp;</div>
-                                                    Tài khoản của bạn đang đợi phê duyệt
+                                                    Tài khoản của bạn chưa được phê duyệt
                                                     <br>
                                                 </td>
                                             </tr>
@@ -218,12 +218,11 @@
                                     <td style="background-color:#ffffff; padding: 0 20px">
                                         <br>
                                         <br>
-                                        <span style="color:#3bcdb0; font-size:20px; font-weight:bold;">Chỉ còn đợi admin phê duyệt tài khoản của bạn</span>
+                                        <span style="color:#3bcdb0; font-size:20px; font-weight:bold;"></span>
                                         <br>
                                         <p>
-                                            Vậy là chỉ còn đợi admin phê duyệt tài khoản của bạn, là bạn có thể đăng
-                                            nhập và tận hưởng những chức năng tuyệt vời của website. Trong lúc chờ đợi, bạn cũng có thể
-                                            vào website để dạo qua, xem các món quà tuyệt vời từ mọi ngưởi.
+                                            Tài khoản của bạn chưa được phê duyệt. Vui lòng đăng ký lại với các thông
+                                            tin chính xác về bản thân. Xin cảm ơn!
                                         </p>
                                     </td>
                                 </tr>

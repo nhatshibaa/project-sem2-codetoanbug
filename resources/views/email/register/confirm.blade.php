@@ -248,12 +248,12 @@
                                                             </tr>
                                                             <tr>
                                                                 <td style="text-align:left;">
-                                                                    <h4>Username:</h4>
+                                                                    <h4>Username: {{$username}}</h4>
                                                                 </td>
                                                             </tr>
                                                             <tr>
                                                                 <td style="text-align:left;">
-                                                                    <h4>Password:</h4>
+                                                                    <h4>Password: {{$password}}</h4>
                                                                 </td>
                                                             </tr>
                                                         </table>
